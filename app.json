@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "Pedido de Carnes",
+    "slug": "pedido-carnes",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "platforms": ["android", "ios"],
+    "android": { "package": "com.hallan.pedidocarnes" },
+    "ios": { "bundleIdentifier": "com.hallan.pedidocarnes" }
+  }
+}
