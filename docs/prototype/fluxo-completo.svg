@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="2100" viewBox="0 0 1440 2100">
+  <defs>
+    <style>
+      .bg{fill:#F4F1EA}.phone{fill:#101418;stroke:#2B3035;stroke-width:4}.screen{fill:#F8F7F3}.card{fill:#FFFFFF;stroke:#DED9CF;stroke-width:2}.primary{fill:#8B1E2D}.secondary{fill:#F3E4E7;stroke:#8B1E2D;stroke-width:2}.muted{fill:#6A737C}.dark{fill:#1E272F}.white{fill:#FFFFFF}.green{fill:#1FA463}.line{stroke:#DED9CF;stroke-width:2}.title{font:800 34px Arial}.h2{font:800 25px Arial}.body{font:400 18px Arial}.small{font:400 15px Arial}.button{font:800 18px Arial}.label{font:700 16px Arial}.eyebrow{font:800 13px Arial;letter-spacing:2px}.qty{font:800 22px Arial}.step{font:800 14px Arial}.note{font:400 17px Arial}.shadow{filter:drop-shadow(0 12px 24px rgba(0,0,0,.16))}
+    </style>
+  </defs>
+  <rect class="bg" width="1440" height="2100"/>
+  <text x="80" y="72" class="title dark">Protótipo — Pedido de Carnes</text>
+  <text x="80" y="108" class="body muted">Fluxo principal do aplicativo para Android e iOS</text>
+
+  <!-- Phone 1 Home -->
+  <g transform="translate(80 160)" class="shadow">
+    <rect class="phone" rx="42" width="380" height="760"/>
+    <rect class="screen" rx="34" x="12" y="12" width="356" height="736"/>
+    <rect fill="#101418" rx="12" x="126" y="24" width="128" height="22"/>
+    <text x="34" y="96" class="eyebrow muted">PEDIDOS DO AÇOUGUE</text>
+    <text x="34" y="140" class="title dark">Pedido de Carnes</text>
+    <text x="34" y="176" class="body muted">Rápido, offline e sem digitação repetitiva.</text>
+    <rect class="primary" rx="16" x="30" y="210" width="320" height="62"/>
+    <text x="104" y="250" class="button white">+ NOVO PEDIDO</text>
+    <text x="34" y="322" class="h2 dark">Acesso rápido</text>
+    <rect class="card" rx="18" x="30" y="346" width="320" height="96"/>
+    <text x="54" y="382" class="h2 dark">Fornecedores</text><text x="54" y="416" class="small muted">3 cadastrados</text>
+    <rect class="card" rx="18" x="30" y="458" width="320" height="96"/>
+    <text x="54" y="494" class="h2 dark">Produtos</text><text x="54" y="528" class="small muted">18 carnes cadastradas</text>
+    <rect class="secondary" rx="18" x="30" y="574" width="320" height="112"/>
+    <text x="54" y="610" class="label" fill="#8B1E2D">FUNCIONA SEM INTERNET</text>
+    <text x="54" y="642" class="small muted">Os dados ficam salvos no celular.</text>
+    <text x="54" y="670" class="small muted">O WhatsApp envia quando houver conexão.</text>
+    <text x="34" y="720" class="step muted">TELA 1 · INÍCIO</text>
+  </g>
+
+  <!-- Phone 2 Suppliers -->
+  <g transform="translate(530 160)" class="shadow">
+    <rect class="phone" rx="42" width="380" height="760"/><rect class="screen" rx="34" x="12" y="12" width="356" height="736"/><rect fill="#101418" rx="12" x="126" y="24" width="128" height="22"/>
+    <text x="34" y="96" class="h2 dark">‹  Fornecedores</text>
+    <rect class="card" rx="14" x="30" y="126" width="320" height="58"/><text x="50" y="162" class="body muted">Nome do fornecedor</text>
+    <rect class="card" rx="14" x="30" y="196" width="320" height="58"/><text x="50" y="232" class="body muted">WhatsApp com DDD</text>
+    <rect class="primary" rx="16" x="30" y="270" width="320" height="58"/><text x="112" y="307" class="button white">SALVAR</text>
+    <text x="34" y="380" class="h2 dark">Cadastrados</text>
+    <rect class="card" rx="16" x="30" y="398" width="320" height="82"/><text x="50" y="432" class="label dark">Frigorífico Central</text><text x="50" y="461" class="small muted">47 99999-1111</text>
+    <rect class="card" rx="16" x="30" y="492" width="320" height="82"/><text x="50" y="526" class="label dark">Frigorífico Pamplona</text><text x="50" y="555" class="small muted">47 99999-2222</text>
+    <rect class="card" rx="16" x="30" y="586" width="320" height="82"/><text x="50" y="620" class="label dark">Distribuidora Master</text><text x="50" y="649" class="small muted">47 99999-3333</text>
+    <text x="34" y="720" class="step muted">TELA 2 · FORNECEDORES</text>
+  </g>
+
+  <!-- Phone 3 Products -->
+  <g transform="translate(980 160)" class="shadow">
+    <rect class="phone" rx="42" width="380" height="760"/><rect class="screen" rx="34" x="12" y="12" width="356" height="736"/><rect fill="#101418" rx="12" x="126" y="24" width="128" height="22"/>
+    <text x="34" y="96" class="h2 dark">‹  Produtos</text>
+    <rect class="card" rx="14" x="30" y="126" width="320" height="56"/><text x="50" y="161" class="body muted">Nome da carne</text>
+    <rect class="card" rx="14" x="30" y="194" width="320" height="56"/><text x="50" y="229" class="body muted">Categoria</text>
+    <rect class="secondary" rx="14" x="30" y="264" width="152" height="52"/><text x="74" y="297" class="label" fill="#8B1E2D">✓ Caixa</text>
+    <rect class="card" rx="14" x="198" y="264" width="152" height="52"/><text x="234" y="297" class="label muted">Unidade</text>
+    <rect class="primary" rx="16" x="30" y="332" width="320" height="58"/><text x="104" y="369" class="button white">SALVAR PRODUTO</text>
+    <text x="34" y="438" class="h2 dark">Cadastrados</text>
+    <rect class="card" rx="16" x="30" y="456" width="320" height="76"/><text x="50" y="487" class="label dark">Coxão mole</text><text x="50" y="516" class="small muted">Caixaria · Caixa</text>
+    <rect class="card" rx="16" x="30" y="544" width="320" height="76"/><text x="50" y="575" class="label dark">Costela janela</text><text x="50" y="604" class="small muted">Costelas · Unidade</text>
+    <rect class="card" rx="16" x="30" y="632" width="320" height="76"/><text x="50" y="663" class="label dark">Contrafilé</text><text x="50" y="692" class="small muted">Caixaria · Caixa e unidade</text>
+    <text x="34" y="730" class="step muted">TELA 3 · PRODUTOS</text>
+  </g>
+
+  <!-- Phone 4 Supplier selection -->
+  <g transform="translate(80 1040)" class="shadow">
+    <rect class="phone" rx="42" width="380" height="760"/><rect class="screen" rx="34" x="12" y="12" width="356" height="736"/><rect fill="#101418" rx="12" x="126" y="24" width="128" height="22"/>
+    <text x="34" y="96" class="h2 dark">‹  Novo pedido</text>
+    <text x="34" y="136" class="body muted">Escolha o fornecedor</text>
+    <rect class="secondary" rx="18" x="30" y="164" width="320" height="94"/><circle cx="58" cy="211" r="10" fill="#8B1E2D"/><text x="84" y="202" class="label dark">Frigorífico Central</text><text x="84" y="230" class="small muted">47 99999-1111</text>
+    <rect class="card" rx="18" x="30" y="274" width="320" height="94"/><circle cx="58" cy="321" r="10" fill="#FFFFFF" stroke="#9AA1A7" stroke-width="2"/><text x="84" y="312" class="label dark">Frigorífico Pamplona</text><text x="84" y="340" class="small muted">47 99999-2222</text>
+    <rect class="card" rx="18" x="30" y="384" width="320" height="94"/><circle cx="58" cy="431" r="10" fill="#FFFFFF" stroke="#9AA1A7" stroke-width="2"/><text x="84" y="422" class="label dark">Distribuidora Master</text><text x="84" y="450" class="small muted">47 99999-3333</text>
+    <rect class="primary" rx="16" x="30" y="626" width="320" height="62"/><text x="126" y="666" class="button white">CONTINUAR</text>
+    <text x="34" y="720" class="step muted">TELA 4 · SELEÇÃO</text>
+  </g>
+
+  <!-- Phone 5 Order builder -->
+  <g transform="translate(530 1040)" class="shadow">
+    <rect class="phone" rx="42" width="380" height="760"/><rect class="screen" rx="34" x="12" y="12" width="356" height="736"/><rect fill="#101418" rx="12" x="126" y="24" width="128" height="22"/>
+    <text x="34" y="96" class="h2 dark">‹  Montar pedido</text>
+    <text x="34" y="132" class="small muted">Frigorífico Central</text>
+    <text x="34" y="178" class="h2 dark">CAIXARIA</text>
+    <rect class="card" rx="16" x="30" y="194" width="320" height="92"/><text x="48" y="229" class="label dark">Coxão mole</text><rect class="secondary" rx="10" x="184" y="214" width="42" height="42"/><text x="200" y="243" class="qty" fill="#8B1E2D">−</text><text x="244" y="243" class="qty dark">3</text><rect class="secondary" rx="10" x="282" y="214" width="42" height="42"/><text x="296" y="243" class="qty" fill="#8B1E2D">+</text><text x="48" y="261" class="small muted">caixas</text>
+    <rect class="card" rx="16" x="30" y="298" width="320" height="92"/><text x="48" y="333" class="label dark">Contrafilé</text><rect class="secondary" rx="10" x="184" y="318" width="42" height="42"/><text x="200" y="347" class="qty" fill="#8B1E2D">−</text><text x="244" y="347" class="qty dark">2</text><rect class="secondary" rx="10" x="282" y="318" width="42" height="42"/><text x="296" y="347" class="qty" fill="#8B1E2D">+</text><text x="48" y="365" class="small muted">caixas</text>
+    <text x="34" y="438" class="h2 dark">COSTELAS</text>
+    <rect class="card" rx="16" x="30" y="454" width="320" height="92"/><text x="48" y="489" class="label dark">Costela janela</text><rect class="secondary" rx="10" x="184" y="474" width="42" height="42"/><text x="200" y="503" class="qty" fill="#8B1E2D">−</text><text x="244" y="503" class="qty dark">8</text><rect class="secondary" rx="10" x="282" y="474" width="42" height="42"/><text x="296" y="503" class="qty" fill="#8B1E2D">+</text><text x="48" y="521" class="small muted">unidades</text>
+    <rect class="primary" rx="16" x="30" y="626" width="320" height="62"/><text x="118" y="666" class="button white">REVISAR PEDIDO</text>
+    <text x="34" y="720" class="step muted">TELA 5 · QUANTIDADES</text>
+  </g>
+
+  <!-- Phone 6 Review -->
+  <g transform="translate(980 1040)" class="shadow">
+    <rect class="phone" rx="42" width="380" height="760"/><rect class="screen" rx="34" x="12" y="12" width="356" height="736"/><rect fill="#101418" rx="12" x="126" y="24" width="128" height="22"/>
+    <text x="34" y="96" class="h2 dark">‹  Revisar pedido</text>
+    <text x="34" y="136" class="small muted">Frigorífico Central</text>
+    <rect class="card" rx="18" x="30" y="158" width="320" height="204"/>
+    <text x="50" y="194" class="label dark">CAIXARIA</text><text x="50" y="228" class="body dark">• 3 caixas de Coxão mole</text><text x="50" y="260" class="body dark">• 2 caixas de Contrafilé</text>
+    <text x="50" y="304" class="label dark">COSTELAS</text><text x="50" y="338" class="body dark">• 8 unidades de Costela janela</text>
+    <rect class="card" rx="14" x="30" y="380" width="320" height="56"/><text x="50" y="415" class="body muted">Responsável: João</text>
+    <rect class="card" rx="14" x="30" y="448" width="320" height="90"/><text x="50" y="482" class="body muted">Observação</text><text x="50" y="514" class="small dark">Entregar amanhã antes das 8h.</text>
+    <rect class="primary" rx="16" x="30" y="560" width="320" height="62"/><text x="82" y="600" class="button white">ENVIAR PELO WHATSAPP</text>
+    <rect class="secondary" rx="16" x="30" y="636" width="320" height="52"/><text x="136" y="669" class="button" fill="#8B1E2D">EDITAR</text>
+    <text x="34" y="720" class="step muted">TELA 6 · REVISÃO E ENVIO</text>
+  </g>
+
+  <text x="80" y="1950" class="h2 dark">Direção visual</text>
+  <text x="80" y="1990" class="note muted">Botões grandes, contraste forte, poucos passos e operação rápida para ambiente de açougue.</text>
+  <text x="80" y="2024" class="note muted">Paleta: vinho escuro, branco quente e cinza neutro. Layout responsivo para Android e iPhone.</text>
+</svg>
