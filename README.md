@@ -2,6 +2,12 @@
 
 Aplicativo offline-first para Android e iOS que agiliza pedidos de carnes enviados a vários fornecedores pelo WhatsApp.
 
+## 👀 Veja como o aplicativo está ficando
+
+![Protótipo completo do aplicativo](docs/prototype/fluxo-completo.svg)
+
+Para abrir a visualização em uma página separada, toque em **[PROTOTYPE.md](PROTOTYPE.md)**.
+
 ## Escopo do MVP
 
 - Vários fornecedores
@@ -51,9 +57,9 @@ Use o aplicativo Expo Go para testes iniciais. A abertura e o envio real pelo Wh
 
 ## Próximas entregas
 
-1. Navegação e design system
-2. Banco SQLite e migrations
-3. Cadastro de fornecedores e produtos
-4. Criação e revisão do pedido
-5. Integração segura com WhatsApp
-6. Testes unitários e de integração
+1. Validar o protótipo visual
+2. Associar produtos aos fornecedores
+3. Finalizar cadastros administrativos
+4. Testar o fluxo completo no Android
+5. Gerar APK de teste
+6. Preparar build para iOS
