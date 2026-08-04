@@ -3,39 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#0a9b4a">
+  <meta name="theme-color" content="#0A9B4A">
   <title>Pedidos de Carnes — Itália Supermercado</title>
   <style>
-    :root{--green:#0a9b4a;--red:#e6222f;--bg:#f7f8f7;--text:#111827;--muted:#6b7280;--line:#e7e9e8;--shadow:0 8px 24px rgba(16,24,40,.09)}
-    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
-    main{max-width:760px;margin:auto;padding:calc(18px + env(safe-area-inset-top)) 18px calc(104px + env(safe-area-inset-bottom))}
-    .screen{display:none}.screen.active{display:block}.logo-wrap{text-align:center;padding:8px 0 26px}.logo{width:min(78vw,320px);height:auto}
-    h1{font-size:30px;margin:0 0 8px}h2{font-size:27px;margin:0 0 16px}.lead{font-size:17px;color:#4b5563;line-height:1.5;margin:0 0 26px}
-    .primary-card{border:0;border-radius:22px;background:linear-gradient(135deg,var(--green),#10a957);color:#fff;padding:22px;display:flex;align-items:center;gap:18px;box-shadow:var(--shadow);width:100%;text-align:left}
-    .circle-icon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--green);font-size:38px;flex:0 0 auto}.primary-card strong{font-size:23px;display:block;margin-bottom:5px}.chev{margin-left:auto;font-size:42px}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}.tile,.card,.item{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}
-    .tile{padding:18px;text-align:left;min-height:170px;display:flex;flex-direction:column;justify-content:space-between}.tile-icon{font-size:34px;color:var(--green)}.tile.products .tile-icon{color:var(--red)}.tile h3{font-size:21px;margin:12px 0 6px}.tile p,.muted{color:var(--muted)}.link{color:var(--green);font-weight:800}
-    .card{padding:20px;margin:16px 0}.section-head{font-size:22px;font-weight:800;margin-bottom:16px}.empty{background:#f4faf6;border-radius:16px;padding:24px;text-align:center;color:var(--muted)}
-    .test-card{display:flex;gap:16px;align-items:center;flex-wrap:wrap}.test-info{flex:1;min-width:170px}.test-info strong{display:block;color:var(--green);font-size:22px;margin-top:4px}
-    .btn{border:0;border-radius:15px;min-height:52px;padding:12px 18px;font-size:16px;font-weight:800}.btn.full{width:100%}.green{background:var(--green);color:#fff}.red{background:var(--red);color:#fff}
-    .input,select,textarea{width:100%;border:1px solid #d9dddb;background:#fff;border-radius:14px;padding:14px 15px;font-size:16px;margin:6px 0 12px}.back{background:none;border:0;color:var(--green);font-weight:800;font-size:16px;padding:6px 0 16px}
-    .row{display:flex;gap:12px;align-items:center}.between{justify-content:space-between}.item{padding:16px;margin:10px 0}.qty{display:flex;align-items:center;gap:12px}.qty button{width:42px;height:42px;border:1px solid #d7ddd9;border-radius:12px;background:#fff;font-size:23px}.category{font-size:20px;font-weight:900;margin:22px 0 8px}pre{white-space:pre-wrap;font:inherit;line-height:1.55;margin:0}
-    .nav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px 6px calc(10px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,1fr);z-index:20}.nav button{border:0;background:none;color:#6b7280;font-size:12px;padding:5px 2px}.nav button.active{color:var(--green);font-weight:800}.ico{display:block;font-size:25px;margin-bottom:3px}.toast{position:fixed;left:50%;bottom:100px;transform:translateX(-50%);background:#111827;color:#fff;padding:12px 16px;border-radius:12px;display:none;z-index:30}
-    @media(max-width:520px){.tile{padding:15px;min-height:160px}.tile h3{font-size:18px}.grid{gap:9px}}
+    :root{--green:#0a9b4a;--red:#e6222f;--bg:#f6f7f6;--text:#111827;--muted:#6b7280;--line:#e6e9e7;--shadow:0 8px 24px rgba(16,24,40,.09)}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text)}button,input,select,textarea{font:inherit}button{cursor:pointer}
+    main{max-width:760px;margin:auto;padding:calc(12px + env(safe-area-inset-top)) 18px calc(108px + env(safe-area-inset-bottom))}
+    .screen{display:none}.screen.active{display:block}.logo-wrap{text-align:center;background:#fff;border-radius:22px;padding:10px 14px 12px;margin-bottom:20px;box-shadow:var(--shadow)}.logo{display:block;width:min(82vw,360px);height:auto;margin:auto}.tagline{margin:2px 0 0;color:var(--muted);font-size:13px}
+    h1{font-size:30px;margin:0 0 8px}h2{font-size:27px;margin:0 0 16px}.lead{font-size:17px;color:#4b5563;line-height:1.45;margin:0 0 22px}
+    .primary-card{border:0;border-radius:22px;background:linear-gradient(135deg,var(--green),#11ad58);color:#fff;padding:21px;display:flex;align-items:center;gap:17px;box-shadow:var(--shadow);width:100%;text-align:left}.circle-icon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--green);font-size:38px;flex:none}.primary-card strong{font-size:23px;display:block;margin-bottom:4px}.chev{margin-left:auto;font-size:40px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}.tile,.card,.item{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.tile{padding:17px;text-align:left;min-height:156px;display:flex;flex-direction:column;justify-content:space-between}.tile-icon{font-size:33px;color:var(--green)}.tile.red-icon .tile-icon{color:var(--red)}.tile h3{font-size:20px;margin:10px 0 5px}.tile p,.muted{color:var(--muted)}.link{color:var(--green);font-weight:800}.card{padding:19px;margin:15px 0}.section-head{font-size:21px;font-weight:850;margin-bottom:14px}.empty{background:#f0f8f3;border-radius:16px;padding:22px;text-align:center;color:var(--muted)}
+    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:#fff;border:1px solid var(--line);border-radius:17px;padding:15px}.stat strong{font-size:24px;color:var(--green);display:block}.stat span{font-size:13px;color:var(--muted)}
+    .test-card{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.test-info{flex:1;min-width:170px}.test-info strong{display:block;color:var(--green);font-size:21px;margin-top:3px}.btn{border:0;border-radius:15px;min-height:52px;padding:12px 18px;font-size:16px;font-weight:800}.btn.full{width:100%}.green{background:var(--green);color:#fff}.red{background:var(--red);color:#fff}.input,select,textarea{width:100%;border:1px solid #d9dddb;background:#fff;border-radius:14px;padding:14px 15px;font-size:16px;margin:6px 0 12px}.back{background:none;border:0;color:var(--green);font-weight:800;font-size:16px;padding:6px 0 16px}.row{display:flex;gap:12px;align-items:center}.between{justify-content:space-between}.item{padding:16px;margin:10px 0}.qty{display:flex;align-items:center;gap:12px}.qty button{width:42px;height:42px;border:1px solid #d7ddd9;border-radius:12px;background:#fff;font-size:23px}.category{font-size:20px;font-weight:900;margin:22px 0 8px}pre{white-space:pre-wrap;font:inherit;line-height:1.55;margin:0}
+    .nav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:9px 4px calc(9px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,1fr);z-index:20}.nav button{border:0;background:none;color:#6b7280;font-size:12px;padding:5px 1px}.nav button.active{color:var(--green);font-weight:800}.ico{display:block;font-size:24px;margin-bottom:3px}.toast{position:fixed;left:50%;bottom:100px;transform:translateX(-50%);background:#111827;color:#fff;padding:12px 16px;border-radius:12px;display:none;z-index:30}
+    @media(max-width:520px){.tile{padding:14px;min-height:150px}.tile h3{font-size:18px}.grid{gap:9px}.logo{width:min(78vw,300px)}}
   </style>
 </head>
 <body>
 <main>
   <section id="home" class="screen active">
-    <div class="logo-wrap"><img class="logo" src="assets/italia-logo.webp" alt="Itália Supermercado"></div>
+    <div class="logo-wrap"><img class="logo" src="assets/italia-logo.svg?v=3" alt="Itália Supermercado"><p class="tagline">Sistema de pedidos do açougue</p></div>
     <h1>Olá!</h1><p class="lead">Gerencie seus pedidos de carnes de forma rápida e prática.</p>
     <button class="primary-card" data-go="new-order"><span class="circle-icon">+</span><span><strong>Novo pedido</strong>Criar um novo pedido de carnes</span><span class="chev">›</span></button>
     <div class="grid">
-      <button class="tile" data-go="suppliers"><span class="tile-icon">♧</span><span><h3>Fornecedores</h3><p>Gerenciar fornecedores</p><span class="link">Ver todos ›</span></span></button>
-      <button class="tile products" data-go="products"><span class="tile-icon">◉</span><span><h3>Produtos</h3><p>Gerenciar produtos</p><span class="link">Ver todos ›</span></span></button>
+      <button class="tile" data-go="suppliers"><span class="tile-icon">👥</span><span><h3>Fornecedores</h3><p>Gerenciar fornecedores</p><span class="link">Ver todos ›</span></span></button>
+      <button class="tile red-icon" data-go="products"><span class="tile-icon">🥩</span><span><h3>Produtos</h3><p>Gerenciar produtos</p><span class="link">Ver todos ›</span></span></button>
+      <button class="tile" data-go="home"><span class="tile-icon">📋</span><span><h3>Pedidos de hoje</h3><p>Acompanhar pedidos</p><span class="link">Ver pedidos ›</span></span></button>
+      <button class="tile red-icon" data-go="new-order"><span class="tile-icon">⭐</span><span><h3>Favoritos</h3><p>Pedidos rápidos</p><span class="link">Criar pedido ›</span></span></button>
     </div>
-    <div class="card"><div class="section-head">▣ Pedidos recentes</div><div class="empty">Nenhum pedido encontrado<br>Crie um novo pedido para começar.</div></div>
-    <div class="card test-card"><div style="font-size:38px;color:var(--green)">◉</div><div class="test-info"><span>Fornecedor de teste</span><strong>Hallan</strong><strong>66 99602-2643</strong></div><button id="sendTest" class="btn red">Enviar teste</button><p class="muted" style="width:100%;margin:0">Este número será usado para testes.</p></div>
+    <div class="stats"><div class="stat"><strong id="supplierCount">0</strong><span>fornecedores</span></div><div class="stat"><strong id="productCount">0</strong><span>produtos</span></div></div>
+    <div class="card"><div class="section-head">📋 Pedidos recentes</div><div class="empty">Nenhum pedido encontrado<br>Crie um novo pedido para começar.</div></div>
+    <div class="card test-card"><div style="font-size:38px">💬</div><div class="test-info"><span>Fornecedor de teste</span><strong>Hallan</strong><strong>66 99602-2643</strong></div><button id="sendTest" class="btn red">Enviar teste</button><p class="muted" style="width:100%;margin:0">Este número será usado para testes.</p></div>
   </section>
   <section id="suppliers" class="screen"><button class="back" data-go="home">← Voltar</button><h2>Fornecedores</h2><div class="card"><input id="supplierName" class="input" placeholder="Nome do fornecedor"><input id="supplierPhone" class="input" inputmode="tel" placeholder="WhatsApp com DDD"><button id="saveSupplier" class="btn green full">Salvar fornecedor</button></div><div id="supplierList"></div></section>
   <section id="products" class="screen"><button class="back" data-go="home">← Voltar</button><h2>Produtos</h2><div class="card"><input id="productName" class="input" placeholder="Nome da carne"><input id="productCategory" class="input" placeholder="Categoria, ex.: Caixaria"><div class="row"><label><input id="allowBox" type="checkbox" checked> Caixa</label><label><input id="allowUnit" type="checkbox"> Unidade</label></div><button id="saveProduct" class="btn green full" style="margin-top:14px">Salvar produto</button></div><div id="productList"></div></section>
@@ -47,12 +45,11 @@
 <script>
 const seedSuppliers=[{id:1,name:'Hallan',phone:'66996022643'}];
 const seedProducts=[{id:1,name:'Coxão mole',category:'Caixaria',box:true,unit:false},{id:2,name:'Contrafilé',category:'Caixaria',box:true,unit:true},{id:3,name:'Costela janela',category:'Costelas',box:false,unit:true}];
-let suppliers=JSON.parse(localStorage.getItem('italia_suppliers')||'null')||seedSuppliers;
-let products=JSON.parse(localStorage.getItem('italia_products')||'null')||seedProducts;
-let order={};const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-function save(){localStorage.setItem('italia_suppliers',JSON.stringify(suppliers));localStorage.setItem('italia_products',JSON.stringify(products))}
+let suppliers=JSON.parse(localStorage.getItem('italia_suppliers')||'null')||seedSuppliers;let products=JSON.parse(localStorage.getItem('italia_products')||'null')||seedProducts;let order={};const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+function save(){localStorage.setItem('italia_suppliers',JSON.stringify(suppliers));localStorage.setItem('italia_products',JSON.stringify(products));updateStats()}
+function updateStats(){$('#supplierCount').textContent=suppliers.length;$('#productCount').textContent=products.length}
 function toast(m){const t=$('#toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',1800)}
-function go(id){$$('.screen').forEach(s=>s.classList.remove('active'));$('#'+id).classList.add('active');$$('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.go===id));if(id==='suppliers')renderSuppliers();if(id==='products')renderProducts();if(id==='new-order')renderOrder();if(id==='review')renderReview();scrollTo(0,0)}
+function go(id){$$('.screen').forEach(s=>s.classList.remove('active'));$('#'+id).classList.add('active');$$('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.go===id));if(id==='suppliers')renderSuppliers();if(id==='products')renderProducts();if(id==='new-order')renderOrder();if(id==='review')renderReview();updateStats();scrollTo(0,0)}
 $$('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
 function renderSuppliers(){const e=$('#supplierList');e.innerHTML='';suppliers.forEach(s=>{const d=document.createElement('div');d.className='item';d.innerHTML=`<div class="row between"><div><strong>${s.name}</strong><div class="muted">${s.phone}</div></div><button class="back" data-del="${s.id}">Excluir</button></div>`;e.appendChild(d)});e.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{suppliers=suppliers.filter(s=>s.id!=b.dataset.del);save();renderSuppliers()})}
 function renderProducts(){const e=$('#productList');e.innerHTML='';products.forEach(p=>{const d=document.createElement('div');d.className='item';d.innerHTML=`<div class="row between"><div><strong>${p.name}</strong><div class="muted">${p.category} · ${[p.box?'Caixa':'',p.unit?'Unidade':''].filter(Boolean).join(' e ')}</div></div><button class="back" data-del="${p.id}">Excluir</button></div>`;e.appendChild(d)});e.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{products=products.filter(p=>p.id!=b.dataset.del);save();renderProducts()})}
@@ -62,11 +59,8 @@ function qty(id,type,label){return `<div class="row between" style="margin-top:1
 function renderOrder(){const s=$('#supplierSelect');s.innerHTML=suppliers.map(x=>`<option value="${x.id}">${x.name}</option>`).join('');const w=$('#orderProducts');w.innerHTML='';const groups={};products.forEach(p=>(groups[p.category]??=[]).push(p));Object.entries(groups).forEach(([cat,items])=>{w.insertAdjacentHTML('beforeend',`<div class="category">${cat}</div>`);items.forEach(p=>{order[p.id]??={box:0,unit:0};w.insertAdjacentHTML('beforeend',`<div class="item"><strong>${p.name}</strong>${p.box?qty(p.id,'box','caixas'):''}${p.unit?qty(p.id,'unit','unidades'):''}</div>`)})});w.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{const[id,t,d]=b.dataset.q.split(':');order[id][t]=Math.max(0,Math.min(999,order[id][t]+Number(d)));renderOrder()})}
 $('#reviewOrder').onclick=()=>Object.values(order).some(v=>v.box||v.unit)?go('review'):toast('Adicione ao menos um item');
 function build(){const supplier=suppliers.find(s=>String(s.id)===$('#supplierSelect').value)||suppliers[0];const lines=['*PEDIDO DE CARNES — ITÁLIA SUPERMERCADO*','',`Fornecedor: ${supplier?.name||''}`,''];const groups={};products.forEach(p=>{const q=order[p.id];if(q&&(q.box||q.unit))(groups[p.category]??=[]).push({p,q})});Object.entries(groups).forEach(([c,it])=>{lines.push(`*${c.toUpperCase()}*`);it.forEach(({p,q})=>{if(q.box)lines.push(`• ${q.box} caixa${q.box>1?'s':''} de ${p.name}`);if(q.unit)lines.push(`• ${q.unit} unidade${q.unit>1?'s':''} de ${p.name}`)});lines.push('')});const n=$('#notes').value.trim(),r=$('#responsible').value.trim();if(n)lines.push('Observação:',n,'');if(r)lines.push(`Responsável: ${r}`);return{supplier,text:lines.join('\n')}}
-function renderReview(){$('#summaryText').textContent=build().text}
-$('#responsible').oninput=renderReview;$('#notes').oninput=renderReview;
-function openWA(phone,text){const p=phone.startsWith('55')?phone:'55'+phone;open(`https://wa.me/${p}?text=${encodeURIComponent(text)}`,'_blank')}
-$('#openWhatsapp').onclick=()=>{const{supplier,text}=build();openWA(supplier.phone,text)};
-$('#sendTest').onclick=()=>openWA('66996022643','Teste do sistema de pedidos — Itália Supermercado');
+function renderReview(){$('#summaryText').textContent=build().text}$('#responsible').oninput=renderReview;$('#notes').oninput=renderReview;
+function openWA(phone,text){const p=phone.startsWith('55')?phone:'55'+phone;open(`https://wa.me/${p}?text=${encodeURIComponent(text)}`,'_blank')}$('#openWhatsapp').onclick=()=>{const{supplier,text}=build();openWA(supplier.phone,text)};$('#sendTest').onclick=()=>openWA('66996022643','Teste do sistema de pedidos — Itália Supermercado');updateStats();
 </script>
 </body>
 </html>
