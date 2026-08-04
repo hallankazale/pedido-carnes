@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pedido de Carnes</title>
+  <style>
+    :root{--bg:#f6f5f1;--card:#fff;--text:#1c252e;--muted:#68717b;--line:#e2e0d8;--brand:#8b1e2d;--brand2:#f3e3e6}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text)}main{max-width:760px;margin:auto;padding:20px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.brand{font-size:28px;font-weight:900}.pill{font-size:12px;color:var(--muted)}.screen{display:none}.screen.active{display:block}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0}.btn{width:100%;min-height:54px;border:0;border-radius:15px;padding:12px 16px;font-weight:800;font-size:16px;cursor:pointer}.btn.primary{background:var(--brand);color:white}.btn.secondary{background:white;border:1px solid var(--line);color:var(--text)}.grid{display:grid;gap:12px}.grid.two{grid-template-columns:1fr 1fr}.input,select,textarea{width:100%;border:1px solid #d8d5cb;background:white;border-radius:14px;padding:14px;font-size:16px;margin:6px 0 10px}.row{display:flex;gap:10px;align-items:center}.row.between{justify-content:space-between}.qty{display:flex;align-items:center;gap:10px}.qty button{width:42px;height:42px;border-radius:12px;border:1px solid #cfcbc0;background:white;font-size:22px}.badge{display:inline-block;padding:5px 9px;border-radius:999px;background:var(--brand2);color:var(--brand);font-size:12px;font-weight:700}.muted{color:var(--muted);font-size:14px}.section-title{font-size:20px;font-weight:900;margin:20px 0 8px}.back{border:0;background:transparent;font-size:16px;font-weight:800;padding:0;color:var(--brand)}.empty{padding:18px;text-align:center;color:var(--muted)}.summary pre{white-space:pre-wrap;font:inherit;line-height:1.5}.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#17202a;color:white;padding:12px 16px;border-radius:12px;display:none;z-index:10}@media(max-width:560px){.grid.two{grid-template-columns:1fr}.brand{font-size:24px}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="top"><div class="brand">Pedido de Carnes</div><div class="pill">Protótipo funcional</div></div>
+
+  <section id="home" class="screen active">
+    <div class="card"><div class="badge">FUNCIONA NO NAVEGADOR</div><h2>Monte pedidos em poucos toques</h2><p class="muted">Cadastre fornecedores e produtos, escolha quantidades e gere a mensagem do WhatsApp.</p><button class="btn primary" data-go="new-order">+ Novo pedido</button></div>
+    <div class="grid two">
+      <button class="btn secondary" data-go="suppliers">Fornecedores</button>
+      <button class="btn secondary" data-go="products">Produtos</button>
+    </div>
+    <div class="card"><strong id="homeStats">0 fornecedores · 0 produtos</strong><p class="muted">Os dados ficam salvos neste navegador.</p></div>
+  </section>
+
+  <section id="suppliers" class="screen">
+    <button class="back" data-go="home">← Voltar</button><h2>Fornecedores</h2>
+    <div class="card"><input id="supplierName" class="input" placeholder="Nome do fornecedor"><input id="supplierPhone" class="input" inputmode="tel" placeholder="WhatsApp com DDD"><button id="saveSupplier" class="btn primary">Salvar fornecedor</button></div>
+    <div id="supplierList"></div>
+  </section>
+
+  <section id="products" class="screen">
+    <button class="back" data-go="home">← Voltar</button><h2>Produtos</h2>
+    <div class="card"><input id="productName" class="input" placeholder="Nome da carne"><input id="productCategory" class="input" placeholder="Categoria, ex.: Caixaria"><div class="row"><label><input id="allowBox" type="checkbox" checked> Caixa</label><label><input id="allowUnit" type="checkbox"> Unidade</label></div><button id="saveProduct" class="btn primary" style="margin-top:12px">Salvar produto</button></div>
+    <div id="productList"></div>
+  </section>
+
+  <section id="new-order" class="screen">
+    <button class="back" data-go="home">← Voltar</button><h2>Novo pedido</h2>
+    <div class="card"><label>Fornecedor</label><select id="supplierSelect"></select></div>
+    <div id="orderProducts"></div>
+    <button id="reviewOrder" class="btn primary">Revisar pedido</button>
+  </section>
+
+  <section id="review" class="screen">
+    <button class="back" data-go="new-order">← Voltar</button><h2>Revisar pedido</h2>
+    <div class="card"><input id="responsible" class="input" placeholder="Nome do responsável"><textarea id="notes" rows="3" placeholder="Observação"></textarea></div>
+    <div class="card summary"><pre id="summaryText"></pre></div>
+    <button id="openWhatsapp" class="btn primary">Abrir no WhatsApp</button>
+  </section>
+</main>
+<div id="toast" class="toast"></div>
+<script>
+const seedSuppliers=[{id:1,name:'Frigorífico Central',phone:'47999991111'},{id:2,name:'Frigorífico Pamplona',phone:'47999992222'}];
+const seedProducts=[{id:1,name:'Coxão mole',category:'Caixaria',box:true,unit:false},{id:2,name:'Contrafilé',category:'Caixaria',box:true,unit:true},{id:3,name:'Costela janela',category:'Costelas',box:false,unit:true}];
+let suppliers=JSON.parse(localStorage.getItem('pc_suppliers')||'null')||seedSuppliers;
+let products=JSON.parse(localStorage.getItem('pc_products')||'null')||seedProducts;
+let order={};
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+function save(){localStorage.setItem('pc_suppliers',JSON.stringify(suppliers));localStorage.setItem('pc_products',JSON.stringify(products));}
+function toast(msg){const t=$('#toast');t.textContent=msg;t.style.display='block';setTimeout(()=>t.style.display='none',1800)}
+function go(id){$$('.screen').forEach(s=>s.classList.remove('active'));$('#'+id).classList.add('active');if(id==='home')renderHome();if(id==='suppliers')renderSuppliers();if(id==='products')renderProducts();if(id==='new-order')renderOrder();if(id==='review')renderReview();window.scrollTo(0,0)}
+$$('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+function renderHome(){$('#homeStats').textContent=`${suppliers.length} fornecedor(es) · ${products.length} produto(s)`}
+function renderSuppliers(){const el=$('#supplierList');el.innerHTML=suppliers.length?'':'<div class="empty">Nenhum fornecedor.</div>';suppliers.forEach(s=>{const d=document.createElement('div');d.className='card';d.innerHTML=`<div class="row between"><div><strong>${s.name}</strong><div class="muted">${s.phone}</div></div><button class="back" data-del="${s.id}">Excluir</button></div>`;el.appendChild(d)});el.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{suppliers=suppliers.filter(s=>s.id!=b.dataset.del);save();renderSuppliers()})}
+function renderProducts(){const el=$('#productList');el.innerHTML=products.length?'':'<div class="empty">Nenhum produto.</div>';products.forEach(p=>{const d=document.createElement('div');d.className='card';d.innerHTML=`<div class="row between"><div><strong>${p.name}</strong><div class="muted">${p.category} · ${[p.box?'Caixa':'',p.unit?'Unidade':''].filter(Boolean).join(' e ')}</div></div><button class="back" data-del="${p.id}">Excluir</button></div>`;el.appendChild(d)});el.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{products=products.filter(p=>p.id!=b.dataset.del);save();renderProducts()})}
+$('#saveSupplier').onclick=()=>{const name=$('#supplierName').value.trim(),phone=$('#supplierPhone').value.replace(/\D/g,'');if(name.length<2||phone.length<10)return toast('Informe nome e WhatsApp válido');suppliers.push({id:Date.now(),name,phone});save();$('#supplierName').value='';$('#supplierPhone').value='';renderSuppliers();toast('Fornecedor salvo')};
+$('#saveProduct').onclick=()=>{const name=$('#productName').value.trim(),category=$('#productCategory').value.trim(),box=$('#allowBox').checked,unit=$('#allowUnit').checked;if(name.length<2||category.length<2||(!box&&!unit))return toast('Preencha os dados e marque uma unidade');products.push({id:Date.now(),name,category,box,unit});save();$('#productName').value='';renderProducts();toast('Produto salvo')};
+function renderOrder(){const sel=$('#supplierSelect');sel.innerHTML=suppliers.map(s=>`<option value="${s.id}">${s.name}</option>`).join('');const wrap=$('#orderProducts');wrap.innerHTML='';const groups={};products.forEach(p=>(groups[p.category]??=[]).push(p));Object.entries(groups).forEach(([cat,items])=>{const h=document.createElement('div');h.innerHTML=`<div class="section-title">${cat}</div>`;wrap.appendChild(h);items.forEach(p=>{order[p.id]??={box:0,unit:0};const d=document.createElement('div');d.className='card';d.innerHTML=`<strong>${p.name}</strong>${p.box?qtyHtml(p.id,'box','caixas'):''}${p.unit?qtyHtml(p.id,'unit','unidades'):''}`;wrap.appendChild(d)})});wrap.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{const [id,type,delta]=b.dataset.q.split(':');order[id][type]=Math.max(0,Math.min(999,order[id][type]+Number(delta)));renderOrder()})}
+function qtyHtml(id,type,label){return `<div class="row between" style="margin-top:12px"><span class="muted">${label}</span><div class="qty"><button data-q="${id}:${type}:-1">−</button><strong>${order[id][type]}</strong><button data-q="${id}:${type}:1">+</button></div></div>`}
+$('#reviewOrder').onclick=()=>{if(!suppliers.length||!products.length)return toast('Cadastre fornecedor e produtos');const has=Object.values(order).some(v=>v.box>0||v.unit>0);if(!has)return toast('Adicione ao menos um item');go('review')};
+function buildMessage(){const supplier=suppliers.find(s=>String(s.id)===$('#supplierSelect').value)||suppliers[0];const lines=['*PEDIDO DE CARNES*','',`Fornecedor: ${supplier?.name||''}`,''];const groups={};products.forEach(p=>{const q=order[p.id];if(!q)return;if(q.box>0||q.unit>0)(groups[p.category]??=[]).push({p,q})});Object.entries(groups).forEach(([cat,items])=>{lines.push(`*${cat.toUpperCase()}*`);items.forEach(({p,q})=>{if(q.box)lines.push(`• ${q.box} caixa${q.box>1?'s':''} de ${p.name}`);if(q.unit)lines.push(`• ${q.unit} unidade${q.unit>1?'s':''} de ${p.name}`)});lines.push('')});const notes=$('#notes').value.trim(),resp=$('#responsible').value.trim();if(notes)lines.push('Observação:',notes,'');if(resp)lines.push(`Responsável: ${resp}`);return {supplier,text:lines.join('\n')}}
+function renderReview(){$('#summaryText').textContent=buildMessage().text}
+$('#responsible').addEventListener('input',renderReview);$('#notes').addEventListener('input',renderReview);
+$('#openWhatsapp').onclick=()=>{const {supplier,text}=buildMessage();const phone=(supplier.phone.startsWith('55')?supplier.phone:'55'+supplier.phone);window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`,'_blank')};
+renderHome();
+</script>
+</body>
+</html>
